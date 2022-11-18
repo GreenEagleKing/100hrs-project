@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div">
+      <ul>
+        <% for(var i=0; i<products.length; i++) {%>
+          <li>
+            <a href="/product/<%= products[i]._id%>">
+              <img src="<%= products[i].file%>">
+            </a>
+            <h1><%= products[i].title%></h1>
+            <p><%= products[i].description%></p>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
