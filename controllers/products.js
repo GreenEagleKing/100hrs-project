@@ -13,7 +13,7 @@ module.exports = {
   getLibrary: async (req, res) => {
     try {
       const products = await Product.find().sort({ createdAt: "desc" }).lean();
-      res.render("library.ejs", { products: products });
+      res.render("library.ejs", { products: products, user: req.user});
     } catch (err) {
       console.log(err);
     }
