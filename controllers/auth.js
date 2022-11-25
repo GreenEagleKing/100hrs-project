@@ -4,14 +4,17 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
+    console.log(req.user)
     return res.redirect("/profile");
   }
   res.render("login", {
     title: "Login",
+    user: req.user,
   });
 };
 
 exports.postLogin = (req, res, next) => {
+  console.log(req.body.email)
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: "Please enter a valid email address." });
@@ -44,15 +47,17 @@ exports.postLogin = (req, res, next) => {
   })(req, res, next);
 };
 
-exports.logout = (req, res) => {
-  req.logout(() => {
-    console.log('User has logged out.')
-  })
-  req.session.destroy((err) => {
-    if (err)
-      console.log("Error : Failed to destroy the session during logout.", err);
-    req.user = null;
-    res.redirect("/");
+exports.logout = (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    console.log("User has logged out.");
+    req.session.destroy((err) => {
+      if (err) console.log("Error : Failed to destroy the session during logout.", err);
+      req.user = null;
+      res.redirect("/");
+    });
   });
 };
 
@@ -62,6 +67,7 @@ exports.getSignup = (req, res) => {
   }
   res.render("signup", {
     title: "Create Account",
+    user: req.user,
   });
 };
 

@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+
+  <main>
+      <div class="grid grid-cols-3 gap-4">
+      <% for(var i=0; i<products.length; i++) {%>     
+          <div class="border-8 border-t-pink-500 p-4 rounded shadow ">
+            <a href="/product/<%= products[i]._id%>">
+              <div class="#">
+                <img class="max-w-52 object-contain" src="<%= products[i].file%>">
+              </div>
+            <h1 class="text-lg font-bold"><%= products[i].title%></h1>
+            <!-- <p><%= products[i].description%></p> -->
+            </a>
+          </div>
+        <% } %>
+    </div>
+  </main>  
+<%- include('partials/footer') -%>
