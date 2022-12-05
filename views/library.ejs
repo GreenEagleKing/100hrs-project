@@ -1,5 +1,16 @@
 <%- include('partials/header') -%>
 
+<script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
+
+<div class="w-48">
+  <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="v1670255154/VW_E121_dir_t7bwt7.glb">
+    <button slot="zoom-in" class="hidden"></button>
+    <button slot="zoom-out" class="hidden"></button>
+  </ar-3d-viewer>
+</div>
+
+
+
   <main>
       <div class="grid grid-cols-4 gap-4 p-6">
       <% for(var i=0; i<products.length; i++) {%>     
