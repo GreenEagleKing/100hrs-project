@@ -1,29 +1,55 @@
 <%- include('partials/header') -%>
-
 <script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
 
-<div class="w-48">
+<!-- <div class="w-48">
   <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="v1670255154/VW_E121_dir_t7bwt7.glb">
     <button slot="zoom-in" class="hidden"></button>
     <button slot="zoom-out" class="hidden"></button>
   </ar-3d-viewer>
-</div>
-
+</div> -->
 
 
   <main>
       <div class="grid grid-cols-4 gap-4 p-6">
-      <% for(var i=0; i<products.length; i++) {%>     
-          <div class="grid border-8 p-4 rounded shadow">
-            <a href="/product/<%= products[i]._id%>">
-                <img class="aspect-square	h-full object-cover" src="<%= products[i].file%>">
-                <div class="">
-                  <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
-                  <p><%= products[i].description%></p>
-                </div>
-            </a>
+      <% for(let i=0; i < products.length; i++) { %>     
+          <div class="border-black border-2	p-4">
+            <div class="max-w-52">
+            <% if (products[i].file.slice(-3) === "glb") { %>
+                <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
+                  <button slot="zoom-in" class="hidden"></button>
+                  <button slot="zoom-out" class="hidden"></button>
+                </ar-3d-viewer>
+            <% } else { %>
+              <img class="aspect-square	object-cover" src="<%= products[i].file%>">
+            <% } %>
+              </div>
+                  <a href="/product/<%= products[i]._id%>">
+                    <div class="">  
+                      <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
+                      <p><%= products[i].description%></p>
+                    </div>
+                  </a>
+              
           </div>
-        <% } %>
+      <% } %>
     </div>
+
+    
   </main>  
 <%- include('partials/footer') -%>
+
+<!-- <main>
+  <div class="grid grid-cols-4 gap-4 p-6">
+  <% for(var i=0; i<products.length; i++) {%>     
+      <div class="grid border-8 p-4 rounded shadow">
+        <a href="/product/<%= products[i]._id%>">
+            <img class="aspect-square	h-full object-cover" src="<%= products[i].file%>">
+            <div class="">
+              <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
+              <p><%= products[i].description%></p>
+            </div>
+        </a>
+      </div>
+    <% } %>
+</div>
+</main>   -->

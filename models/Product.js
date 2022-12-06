@@ -40,6 +40,7 @@ const ProductSchema = new mongoose.Schema({
   file: {
     type: String,
     require: true,
+    resource_type: "image",
   },
   cloudinaryId: {
     type: String,
