@@ -10,30 +10,30 @@
 
 
   <main>
-      <div class="grid grid-cols-4 gap-4 p-6">
+    <section class="flex w-3/4 justify-center m-auto">
+      <div class="grid grid-cols-4 gap-4">
       <% for(let i=0; i < products.length; i++) { %>     
-          <div class="border-black border-2	p-4">
-            <div class="max-w-52">
+          <div class="flex flex-col	 border-black border-2	p-4 w-full max-h-96 justify-between">
+            <div class="w-full">
             <% if (products[i].file.slice(-3) === "glb") { %>
                 <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
                   <button slot="zoom-in" class="hidden"></button>
                   <button slot="zoom-out" class="hidden"></button>
                 </ar-3d-viewer>
             <% } else { %>
-              <img class="aspect-square	object-cover" src="<%= products[i].file%>">
+              <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
             <% } %>
               </div>
                   <a href="/product/<%= products[i]._id%>">
                     <div class="">  
-                      <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
+                      <h1 class="text-lg font-bold"><%= products[i].title%></h1>
                       <p><%= products[i].description%></p>
                     </div>
                   </a>
-              
           </div>
       <% } %>
     </div>
-
+  </section>
     
   </main>  
 <%- include('partials/footer') -%>
