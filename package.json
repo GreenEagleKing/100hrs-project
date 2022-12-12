@@ -18,13 +18,15 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.20",
     "tailwindcss": "^3.2.4"
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
-
+    "dev": "nodemon server.js",
+    "watch": "tailwind -i public/css/input.css -o public/css/dist/output.css --watch",
+    "devCon": "concurrently \"nodemon server.js\" \"npx tailwindcss -i public/css/input.css -o public/css/dist/output.css --watch\" "
   },
   "name": "100hrs-project",
   "version": "1.0.0",
@@ -41,4 +43,3 @@
   "homepage": "https://github.com/GreenEagleKing/100hrs-project#readme",
   "description": ""
 }
-
