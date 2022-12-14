@@ -1,18 +1,55 @@
 <%- include('partials/header') -%>
+<script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
+
+<!-- <div class="w-48">
+  <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="v1670255154/VW_E121_dir_t7bwt7.glb">
+    <button slot="zoom-in" class="hidden"></button>
+    <button slot="zoom-out" class="hidden"></button>
+  </ar-3d-viewer>
+</div> -->
+
 
   <main>
-      <div class="grid grid-cols-4 gap-4 p-6">
-      <% for(var i=0; i<products.length; i++) {%>     
-          <div class="grid border-8 p-4 rounded shadow">
-            <a href="/product/<%= products[i]._id%>">
-                <img class="aspect-square	h-full object-cover" src="<%= products[i].file%>">
-                <div class="">
-                  <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
-                  <p><%= products[i].description%></p>
-                </div>
-            </a>
+    <section class="flex w-3/4 justify-center m-auto my-20">
+      <div class="grid grid-cols-4 gap-4">
+      <% for(let i=0; i < products.length; i++) { %>     
+          <div class="flex flex-col	shadow-lg	hover:shadow-blue-200	p-4 w-full max-h-96 justify-between">
+            <div class="w-full">
+            <% if (products[i].file.slice(-3) === "glb") { %>
+                <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
+                  <button slot="zoom-in" class="hidden"></button>
+                  <button slot="zoom-out" class="hidden"></button>
+                </ar-3d-viewer>
+            <% } else { %>
+              <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
+            <% } %>
+              </div>
+                  <a href="/product/<%= products[i]._id%>">
+                    <div class="mt-2">  
+                      <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-blue-500 text-white"><%= products[i].title%></h1>
+                      <p class="p-2 text-gray-700 text-xs	"><%= products[i].description%></p>
+                    </div>
+                  </a>
           </div>
-        <% } %>
+      <% } %>
     </div>
+  </section>
+    
   </main>  
 <%- include('partials/footer') -%>
+
+<!-- <main>
+  <div class="grid grid-cols-4 gap-4 p-6">
+  <% for(var i=0; i<products.length; i++) {%>     
+      <div class="grid border-8 p-4 rounded shadow">
+        <a href="/product/<%= products[i]._id%>">
+            <img class="aspect-square	h-full object-cover" src="<%= products[i].file%>">
+            <div class="">
+              <h1 class="mt-20 text-lg font-bold"><%= products[i].title%></h1>
+              <p><%= products[i].description%></p>
+            </div>
+        </a>
+      </div>
+    <% } %>
+</div>
+</main>   -->
