@@ -715,6 +715,26 @@ video {
   width: 1.5rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-6\/12 {
+  width: 50%;
+}
+
+.w-5\/12 {
+  width: 41.666667%;
+}
+
+.w-4\/12 {
+  width: 33.333333%;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -912,6 +932,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -932,12 +957,13 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+.px-10\% {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.pr-60 {
-  padding-right: 15rem;
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .pl-3 {
@@ -1040,25 +1066,6 @@ video {
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-
-.form-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.form-control {
-  border-color: black;
-}
-
-/* .form-label {
-    padding-right: 1rem;
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: ;
-    block mb-2 text-sm font-medium text-gray-900 dark:text-white
-} */
 
 .hover\:bg-blue-800:hover {
   --tw-bg-opacity: 1;
