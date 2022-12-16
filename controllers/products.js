@@ -4,7 +4,7 @@ const Product = require("../models/Product");
 module.exports = {
   getProfile: async (req, res) => {
     try {
-      const products = await Product.find({ user: req.user.id });
+      const products = await Product.find({ createdBy: req.user.id });
       res.render("profile.ejs", { products: products, user: req.user });
     } catch (err) {
       console.log(err);
