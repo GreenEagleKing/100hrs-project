@@ -5,6 +5,13 @@ module.exports = {
     extend: {
       padding: {
         '10%': '10%'
+      },
+      colors: {
+        fabLightBlue: '#8ECAE6',
+        fabBrightBlue: '#2183BC',
+        fabDarkBlue: '#023047',
+        fabYellow: '#FFB703',
+        fabOrange: '#FB8500',
       }
     },
   },
