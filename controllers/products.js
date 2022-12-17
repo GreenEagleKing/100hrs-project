@@ -59,7 +59,8 @@ module.exports = {
         }
       );
       console.log("Likes +1");
-      res.redirect(`/product/${req.params.id}`);
+      res.redirect("/library");
+      // res.redirect(`/product/${req.params.id}`); Redirect to product page
     } catch (err) {
       console.log(err);
     }
