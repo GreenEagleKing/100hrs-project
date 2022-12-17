@@ -13,7 +13,7 @@
     <section class="flex w-3/4 justify-center m-auto my-20">
       <div class="grid grid-cols-4 gap-4">
       <% for(let i=0; i < products.length; i++) { %>     
-          <div class="flex flex-col	shadow-lg	hover:shadow-blue-200	p-4 w-full max-h-96 justify-between">
+          <div class="flex flex-col	shadow-lg	hover:shadow-fabDarkBlue p-4 w-full max-h-96 justify-between">
             <div class="w-full">
             <% if (products[i].file.slice(-3) === "glb") { %>
               <div class="h-48">
@@ -28,7 +28,7 @@
             </div>
               <a href="/product/<%= products[i]._id%>">
                 <div class="mt-2">  
-                  <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-fabBrightBlue text-white overflow-hidden	whitespace-nowrap	text-ellipsis"><%= products[i].title%></h1>
+                  <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-fabBrightBlue text-white overflow-hidden whitespace-nowrap text-ellipsis "><%= products[i].title%></h1>
                   <p class="p-2 text-gray-700 text-xs	overflow-hidden	whitespace-nowrap	text-ellipsis"><%= products[i].description%></p>
                 </div>
               </a>
