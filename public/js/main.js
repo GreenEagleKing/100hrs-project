@@ -29,4 +29,13 @@ function showImgPreview(event){
       preview.src = src;
       preview.style.display = "flex";
     }
+}
+
+async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
   }
