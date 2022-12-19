@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
 const productController = require("../controllers/products");
+const contactController = require("../controllers/contact");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Main Routes - simplified for now
@@ -14,6 +15,7 @@ router.get("/signup", authController.getSignup);
 router.post("/login", authController.postLogin);
 router.get("/login", authController.getLogin);
 router.get("/logout", authController.logout);
+router.get("/contact", contactController.getContact);
 
 
 module.exports = router;
