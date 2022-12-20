@@ -5,7 +5,7 @@
   <main>
       <section>
           <div class="flex justify-center">
-              <p>Welcome <strong><%= user.userName %></strong> to your dashboard</p>
+              <p>Welcome <strong><%= user.userName[0].toUpperCase() + user.userName.slice(1).toLowerCase() %></strong> to your dashboard</p>
           </div>
           <div>
             <div class="flex justify-center my-8">
@@ -46,7 +46,7 @@
         <section class="flex w-3/4 justify-center m-auto my-20">
           <div class="grid grid-cols-4 gap-4">
           <% for(let i=0; i < products.length; i++) { %>     
-              <div class="flex flex-col	shadow-lg	hover:shadow-blue-200	p-4 w-full max-h-96 justify-between">
+              <div class="flex flex-col	shadow-lg	hover:shadow-fabDarkBlue	p-4 w-full max-h-96 justify-between">
                 <div class="w-full">
                 <% if (products[i].file.slice(-3) === "glb") { %>
                     <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
