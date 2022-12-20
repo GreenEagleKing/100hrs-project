@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        '10%': '10%'
+        '8%': '8%'
       },
       colors: {
         fabLightBlue: '#8ECAE6',

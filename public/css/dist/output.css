@@ -1020,14 +1020,14 @@ video {
   padding-bottom: 0.625rem;
 }
 
-.px-10\% {
-  padding-left: 10%;
-  padding-right: 10%;
+.px-8\% {
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .px-2 {
