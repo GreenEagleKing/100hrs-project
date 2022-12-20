@@ -6,9 +6,9 @@ function toggleNavBlue() {
     if(url === "") {
         url = 'home'
         document.querySelector(`#${url}`).classList.add('md:text-blue-700')
+    } else {
+      document.querySelector(`#${url}`).classList.add('md:text-blue-700')
     }
-    
-
 }
 toggleNavBlue()
 
