@@ -1,0 +1,87 @@
+<html class="flex flex-col min-h-screen">
+<header>
+    <%- include('partials/header') -%>
+</header>
+
+<body>
+    <main>
+        <section>
+            <div class="flex justify-center items-top space-x-40 my-20">
+                <div>
+                    <h4 class="text-md text-gray-700">Contact</h4>
+                    <h1 class="font-bold text-2xl py-2">We love to hear from our users</h1>
+                    <h2 class="text-lg">Fill in the form or contact us on the email address below.</h2>
+                    <div>
+                        <ul class="flex flex-col my-8">
+                            
+                            <li>
+                                <div class="flex my-6 p-2 space-x-4 items-center border-gray-100 hover:border-fabLightBlue border-2 rounded-lg" onclick="copyToClipboard('+44 7457 893304')" style="cursor: pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#023047" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                                        <path d="M15 7a2 2 0 0 1 2 2" />
+                                        <path d="M15 3a6 6 0 0 1 6 6" />
+                                      </svg>
+                                      <p class="copyText">+44 7457 893304</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex my-6 p-2 space-x-4 items-center border-gray-100 hover:border-fabLightBlue border-2 rounded-lg" onclick="copyToClipboard('info@fabpad.com')" style="cursor: pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-at" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#023047" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="12" r="4" />
+                                    <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
+                                  </svg>
+                                  <p class="copyText">info@fabpad.com</p>
+                                </div>
+                            </li>
+                            <li class="flex my-6 p-2 space-x-4 items-center border-gray-100 hover:border-fabLightBlue border-2 rounded-lg" onclick="copyToClipboard('10 The Green London E38 6OC')" style="cursor: pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#023047" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="12" cy="11" r="3" />
+                                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                                  </svg>
+                                  <p>10 The Green London E38 6OC</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-96">
+                    <form name="contact" data-netlify="true" method="POST" class="">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+                            <input type="name" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                            <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                            <textarea type="message" id="message" name="message" rows="5" cols="40" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
+                            </div>
+                        <div class="mb-6">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your reason</label>
+                            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option>Technical Problem</option>
+                                <option>Product Info</option>
+                                <option>General Help</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <div data-netlify-recaptcha="true"></div>
+                        </div>
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<footer>
+    <%- include('partials/footer') -%>
+</footer>
+
+</html>

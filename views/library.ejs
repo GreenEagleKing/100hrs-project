@@ -13,23 +13,44 @@
     <section class="flex w-3/4 justify-center m-auto my-20">
       <div class="grid grid-cols-4 gap-4">
       <% for(let i=0; i < products.length; i++) { %>     
-          <div class="flex flex-col	shadow-lg	hover:shadow-blue-200	p-4 w-full max-h-96 justify-between">
+          <div class="flex flex-col	shadow-lg	hover:shadow-fabDarkBlue p-4 w-full max-h-96 justify-between">
             <div class="w-full">
             <% if (products[i].file.slice(-3) === "glb") { %>
+              <div class="h-48">
                 <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
                   <button slot="zoom-in" class="hidden"></button>
                   <button slot="zoom-out" class="hidden"></button>
                 </ar-3d-viewer>
+              </div>
             <% } else { %>
               <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
             <% } %>
-              </div>
-                  <a href="/product/<%= products[i]._id%>">
-                    <div class="mt-2">  
-                      <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-blue-500 text-white"><%= products[i].title%></h1>
-                      <p class="p-2 text-gray-700 text-xs	"><%= products[i].description%></p>
-                    </div>
-                  </a>
+            </div>
+              <a href="/product/<%= products[i]._id%>">
+                <div class="mt-2">  
+                  <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-fabBrightBlue text-white overflow-hidden whitespace-nowrap text-ellipsis "><%= products[i].title%></h1>
+                  <p class="p-2 text-gray-700 text-xs	overflow-hidden	whitespace-nowrap	text-ellipsis"><%= products[i].description%></p>
+                </div>
+              </a>
+              <div class="flex justify-between mx-2">
+                <form action="/product/likeProduct/<%= products[i]._id %>?_method=PUT" method="POST">
+                  <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart hover:fill-fabOrange hover:stroke-fabOrange" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2183BC" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+                    </svg>
+                  </button>
+                </form>
+                <a href="https://res.cloudinary.com/dx7g39ojq/image/upload/fl_attachment/v1671197285/<%= products[i].cloudinaryId%>" class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download hover:stroke-fabOrange" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6b7280" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                    <polyline points="7 11 12 16 17 11" />
+                    <line x1="12" y1="4" x2="12" y2="16" />
+                  </svg>
+                </a>
+                
+            </div>
           </div>
       <% } %>
     </div>

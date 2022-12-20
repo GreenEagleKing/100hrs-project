@@ -1,54 +1,73 @@
+<script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
+
 <%- include('partials/header') -%>
-<div class="container">
-  <div>
-      <div>
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
+<body>
+  <main>
+      <section>
+          <div class="flex justify-center">
+              <p>Welcome <strong><%= user.userName[0].toUpperCase() + user.userName.slice(1).toLowerCase() %></strong> to your dashboard</p>
           </div>
           <div>
-            <h2>Add a Product</h2>
-            <form action="/product/createProduct" enctype="multipart/form-data" method="POST">
-              <div>
-                  <label for="title">Title</label>
-                  <input type="text" id="title" name="title">
+            <div class="flex justify-center my-8">
+              <button id="addProductBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto max-w-2xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add a Product</button>
+            </div>
+            <div id="addProduct" class="hidden flex justify-center items-center ml-52 min-w-4/12 space-x-40">
+              <div class="w-1/2 max-w-lg		">
+                <form action="/product/createProduct" enctype="multipart/form-data" method="POST">
+                  <div class="mb-6">
+                      <label for="title">Title</label>
+                      <input type="text" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <div class="mb-6">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                  </div>
+                  <div class="mb-6">
+                    <label for="software">Software</label>
+                    <textarea id="software" name="software" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                  </div>
+                  <div class="mb-6">
+                    <label for="tags">Tools/ Machine Required</label>
+                    <textarea id="tags" name="tags" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                  </div>
+                  <div class="mb-6">
+                    <input type="file" class="form-control" id="file" name="file" onchange="showImgPreview(event)">
+                  </div>
+                  <button type="submit" value="Upload" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                  </form>
+              </div> 
+              <div class="preview flex items-center border-2 max-h-96">
+                <img id="file-ip-1-preview" class="aspect-square object-cover max-h-96">
               </div>
-              <div>
-                <label for="description">Description</label>
-                <textarea id="description" name="description"></textarea>
-              </div>
-              <div>
-                <label for="software">Software</label>
-                <textarea id="software" name="software"></textarea>
-              </div>
-              <div>
-                <label for="tags">Tags</label>
-                <textarea id="tags" name="tags"></textarea>
-              </div>
-              <div>
-                <label for="fileUpload">File</label>
-                <input type="file" class="form-control" id="file" name="file">
-              </div>
-              <button type="submit" value="Upload">Submit</button>
-            </form>
+            </div>
           </div>
-      </div>
-      <div>
-        <ul>
-        <% for(var i=0; i<products.length; i++) {%>
-          <li>
-            <a href="/product/<%= products[i]._id%>">
-              <img src="<%= products[i].file%>">
-              <h1><%= products[i].title%></h1>
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div>
-          <a href="/library">Return to Library</a>
-        </div>  
-      </div>  
-    </div>
-  </div>
+      </section>
+
+        <section class="flex w-3/4 justify-center m-auto my-20">
+          <div class="grid grid-cols-4 gap-4">
+          <% for(let i=0; i < products.length; i++) { %>     
+              <div class="flex flex-col	shadow-lg	hover:shadow-fabDarkBlue	p-4 w-full max-h-96 justify-between">
+                <div class="w-full">
+                <% if (products[i].file.slice(-3) === "glb") { %>
+                    <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
+                      <button slot="zoom-in" class="hidden"></button>
+                      <button slot="zoom-out" class="hidden"></button>
+                    </ar-3d-viewer>
+                <% } else { %>
+                  <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
+                <% } %>
+                  </div>
+                      <a href="/product/<%= products[i]._id%>">
+                        <div class="mt-2">  
+                          <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-blue-500 text-white"><%= products[i].title%></h1>
+                          <p class="p-2 text-gray-700 text-xs	"><%= products[i].description%></p>
+                        </div>
+                      </a>
+              </div>
+          <% } %>
+        </div>
+      </section>
+    </main>
+  </body>
 </div>
 <%- include('partials/footer') -%>
