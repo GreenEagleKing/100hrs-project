@@ -14,10 +14,9 @@ toggleNavBlue()
 
 // Dropdown to add product form appears on click
 
-
+const addProductBtn = document.querySelector('#addProductBtn').addEventListener('click', showAddProduct)
 
 function showAddProduct() {
-    const addProductBtn = document.querySelector('#addProductBtn').addEventListener('click', showAddProduct)
     document.getElementById('addProduct').classList.toggle('hidden')
 }
 
