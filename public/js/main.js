@@ -10,7 +10,7 @@ function toggleNavBlue() {
       document.querySelector(`#${url}`).classList.add('md:text-blue-700')
     }
 }
-toggleNavBlue()
+// toggleNavBlue()
 
 // Dropdown to add product form appears on click
 
