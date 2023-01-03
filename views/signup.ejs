@@ -10,43 +10,44 @@
         <img src="https://i.all3dp.com/workers/images/fit=cover,w=2360,h=1328,gravity=0.5x0.5,format=auto/wp-content/uploads/2022/03/24153606/metal-laser-cutting-trumpf.jpg" class="flex h-full object-cover rounded-r-3xl shadow-xl mr-20">
       </div>
       <div class="flex flex-col justify-center px-8% w-5/12 mr-auto">
-          <% if (locals.messages.errors) { %>
-              <% messages.errors.forEach( el => { %>
-                  <div class="alert alert-danger"><%= el.msg %></div>
-              <% }) %>    
-          <% } %>
-          <% if (locals.messages.info) { %>
-              <% messages.info.forEach( el => { %>
-                  <div class="alert alert-info"><%= el.msg %></div>
-              <% }) %>    
-          <% } %>
-          <h1 class="font-bold text-2xl mb-4">Welcome to FabPad</h1>
-          <form action="/signup" method="POST">
-              <div class="form-entry flex flex-col mb-2">
-                <label for="userName" class="form-label whitespace-nowrap	mb-2 text-sm font-medium text-gray-900 dark:text-white">User Name</label>
-                <input type="text" class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="userName" name="userName">
-              </div>
-              <div class="mb-2">
-                <label for="exampleInputEmail" class="whitespace-nowrap block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
-                <input type="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="exampleInputEmail" aria-describedby="emailHelp" name="email">
-              </div>
-              <div id="emailHelp" class="mt-10 mb-10 text-xs">We'll never share your email with anyone else.</div>
-              <div class="mb-2">
-                <label for="password" class="block whitespace-nowrap mb-2 text-sm font-medium text-gray-900 dark:text-white ">Password</label>
-                <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="password" name="password">
-              </div>
-              <div class="mb-2">
-                <label for="confirmPassword" class="whitespace-nowrap block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
-                <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="confirmPassword" name="confirmPassword">
-              </div>
-              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-          </form>
-          <div class="flex items-center justify-center gap-6 mt-10">
-            <h3 class="text-m">Already have an account ?</h3>
-            <a href="/login">
-              <h3 class="font-bold text-m">Login here</h3>
-            </a>
-          </div>
+      <h1 class="font-bold text-2xl mb-4">Welcome to FabPad</h1>
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger mb-4 text-red-500"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+        <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+                <div class="alert alert-info mb-4 text-red-500"><%= el.msg %></div>
+            <% }) %>    
+        <% } %>
+          
+        <form action="/signup" method="POST">
+            <div class="form-entry flex flex-col mb-2">
+              <label for="userName" class="form-label whitespace-nowrap	mb-2 text-sm font-medium text-gray-900 dark:text-white">User Name</label>
+              <input type="text" class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="userName" name="userName">
+            </div>
+            <div class="mb-2">
+              <label for="exampleInputEmail" class="whitespace-nowrap block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
+              <input type="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="exampleInputEmail" aria-describedby="emailHelp" name="email">
+            </div>
+            <div id="emailHelp" class="mt-10 mb-10 text-xs">We'll never share your email with anyone else.</div>
+            <div class="mb-2">
+              <label for="password" class="block whitespace-nowrap mb-2 text-sm font-medium text-gray-900 dark:text-white ">Password</label>
+              <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="password" name="password">
+            </div>
+            <div class="mb-6">
+              <label for="confirmPassword" class="whitespace-nowrap block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
+              <input type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="confirmPassword" name="confirmPassword">
+            </div>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        </form>
+        <div class="flex items-center justify-center gap-6 mt-10">
+          <h3 class="text-m">Already have an account ?</h3>
+          <a href="/login">
+            <h3 class="font-bold text-m">Login here</h3>
+          </a>
+        </div>
       </div>
     </section>
   </main>
