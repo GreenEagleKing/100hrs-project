@@ -12,36 +12,35 @@
 
 
 <body>
-
     <nav class="flex item-center bg-white px-2 sm:px-4 py-2.5 h-24">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="/" class="flex items-center">
-            <img src="/imgs/FabPad Logo.png" class="h-8 mr-3 sm:h-9" alt="Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FabPad</span>
+            <img src="/imgs/FabPad Logo.png" class="h-14" alt="Logo" />
+            <span class="ml-8 self-center text-4xl font-bold whitespace-nowrap text-fabDarkBlue dark:text-white">FABPAD</span>
         </a>
         <div class="flex items-center md:order-2">
             <% if (!user) { %>
               <a href="/signup" class="mr-2 text-sm text-white hover:bg-gray-700 rounded-full border-gray-700 bg-blue-700 px-2 py-1">Signup</a>
               <a href="/login" class="mr-4 text-sm hover:text-blue-700">Login</a>
             <% } %>
-            <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <button type="button" class="slowHover flex mr-3 text-sm bg-gray-700 rounded-full hover:bg-fabBrightBlue md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
               <span class="sr-only">Open user menu</span>
-              <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <svg class="w-10 h-10" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </button>
             <!-- Dropdown menu -->
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
               <div class="px-4 py-3">
                 <% if (user) { %>
-                  <span class="block text-sm text-gray-900 dark:text-white"><%= user.userName[0].toUpperCase() + user.userName.slice(1).toLowerCase() %></span>
-                  <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400"><%= user.email %></span>
+                  <span class="block text-m text-gray-900 dark:text-white"><%= user.userName[0].toUpperCase() + user.userName.slice(1).toLowerCase() %></span>
+                  <span class="block text-m font-medium text-gray-500 truncate dark:text-gray-400"><%= user.email %></span>
               <% } %>
               </div>
               <ul class="py-1" aria-labelledby="user-menu-button">
                 <li>
-                  <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                  <a href="/profile" class="block px-4 py-2 text-m text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                 </li>
                 <li>
-                  <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                  <a href="/logout" class="block px-4 py-2 text-m text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                 </li>
               </ul>
             </div>
@@ -50,19 +49,19 @@
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
+        <div class="mr-36 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
           <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <a href="/" id="home" class="block py-2 pl-3 pr-4 text-gray-700 bg-blue-700 rounded md:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+              <a href="/" id="home" class="block py-2 pl-3 pr-4 text-lg font-semibold text-gray-700 bg-blue-700 rounded md:bg-transparent md:hover:text-fabBrightBlue md:p-0 dark:text-white" aria-current="page">Home</a>
             </li>
             <li>
-              <a href="/library" id="library" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Library</a>
+              <a href="/library" id="library" class="block py-2 pl-3 pr-4 text-lg font-semibold text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fabBrightBlue md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Library</a>
             </li>
             <li>
-              <a href="/howItWorks" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">How It Works</a>
+              <a href="/howItWorks" class="block py-2 pl-3 pr-4 text-lg font-semibold text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fabBrightBlue md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">How It Works</a>
             </li>
             <li>
-              <a href="/contact" id="contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+              <a href="/contact" id="contact" class="block py-2 pl-3 pr-4 text-lg font-semibold text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-fabBrightBlue md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
             </li>
           </ul>
         </div>

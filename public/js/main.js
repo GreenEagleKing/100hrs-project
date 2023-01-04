@@ -5,9 +5,9 @@ function toggleNavBlue() {
     let url = document.documentURI.match(/.*\/(.*)\/(.*)$/)[2]
     if(url === "") {
         url = 'home'
-        document.querySelector(`#${url}`).classList.add('md:text-blue-700')
+        document.querySelector(`#${url}`).classList.add('text-fabBrightBlue')
     } else {
-      document.querySelector(`#${url}`).classList.add('md:text-blue-700')
+      document.querySelector(`#${url}`).classList.add('text-fabBrightBlue')
     }
 }
 // toggleNavBlue()
