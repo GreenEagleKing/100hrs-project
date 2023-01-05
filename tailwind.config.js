@@ -16,6 +16,10 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'hidden',
+    'pointer-events-none'
+  ],
 }
 
 
