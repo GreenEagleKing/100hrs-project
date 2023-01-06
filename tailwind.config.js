@@ -12,6 +12,8 @@ module.exports = {
         fabDarkBlue: '#023047',
         fabYellow: '#FFB703',
         fabOrange: '#FB8500',
+        fabTeal: '#8ed1bd',
+        fabPurple: '#C1BDC8'
       }
     },
   },
