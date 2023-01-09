@@ -5,3 +5,37 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
+
+.slowHover:hover {
+    transition-duration: 1s;
+}
+
+/* Gradient hover effect for button */
+.gradient-hover-effect {
+    display: flex;
+    padding: 0.4em 1.5em;
+    background: linear-gradient(90deg, #2183BC, transparent) #8ECAE6;
+    font-family: inherit;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 1s;
+    place-content: center;
+  }
+  .gradient-hover-effect:hover, .gradient-hover-effect:focus {
+    background-color: #FB8500;
+    color: #fff;
+}
+
+/* Gradient for How It Works Teal background */
+.tealGradBg {
+    background: linear-gradient(90deg, rgba(142,209,189,1) 44%, rgba(136,201,213,1) 100%);
+}
+
+/* Gradient for How It Works Purple background */
+.purpleGradBg {
+    background: linear-gradient(90deg, rgba(193,189,200,1) 50%, rgba(142,209,189, 1) 100%);
+}
+
+.blueGradBg {
+    background: linear-gradient(90deg, rgb(122, 185, 221) 50%, rgb(96, 200, 248) 100%);
+}

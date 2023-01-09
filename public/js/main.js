@@ -1,21 +1,47 @@
-
-
-// Adds new blue colour class for nav bar title if you are on that page/url
-function toggleNavBlue() {
-    let url = document.documentURI.match(/.*\/(.*)\/(.*)$/)[2]
-    if(url === "") {
-        url = 'home'
-        document.querySelector(`#${url}`).classList.add('md:text-blue-700')
-    } else {
-      document.querySelector(`#${url}`).classList.add('md:text-blue-700')
-    }
-}
+// These functions are run on every page
+hideDropdown()
 toggleNavBlue()
 
+function toggleNavBlue() {
+  let currentUrl = document.location
+  document.querySelectorAll('.navMenu').forEach(function(e){
+    if (e.href.slice(21) == currentUrl.href.slice(21)) {
+      e.classList.remove("text-gray-700")
+    }
+  })
+}
+
+function hideDropdown() {
+  if (!user) {
+    let dropdown = document.getElementById('dropdownMenu')
+    dropdown.disabled = true
+    dropdown.classList.toggle('hover:bg-fabBrightBlue')
+  }
+}
+
+// Run function only on /Library URL
+if (document.location.href.includes('/library')) {
+  blockOnClick()
+}
+
+// if user is not logged in prevent liking and downloading and accessing product
+function blockOnClick() {
+  if (user) {
+    console.log(typeof user)
+    let blockedProducts = document.querySelectorAll('.productLink')
+    
+    for (i = 0; i < blockedProducts.length; i++) {
+      blockedProducts[i].classList.remove("pointer-events-none");
+  }
+  }
+}
+
+// Run functions only on /profile URL
+if (document.location.href.includes('/profile')) {
+  const addProductBtn = document.querySelector('#addProductBtn').addEventListener('click', showAddProduct)
+}
+
 // Dropdown to add product form appears on click
-
-const addProductBtn = document.querySelector('#addProductBtn').addEventListener('click', showAddProduct)
-
 function showAddProduct() {
     document.getElementById('addProduct').classList.toggle('hidden')
 }
@@ -31,10 +57,19 @@ function showImgPreview(event){
 }
 
 async function copyToClipboard(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
   }
+}
+
+
+
+
+
+
+
+
+

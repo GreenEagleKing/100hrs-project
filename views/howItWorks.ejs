@@ -6,29 +6,107 @@
 <body>
     <main>
         <section class="my-20">
-            <div class="flex flex-col space-y-20 min-h-screen">
-                <div class="flex flex-col justify-center items-center">
+            <div class="flex justify-center mb-40">
+                <div class="flex flex-col mt-20 min-h-1/2 max-w-lg">
                     <h4 class="text-md text-gray-700">How It Works</h4>
-                    <h1 class="font-bold text-2xl py-2">Are you a Creator or a Maker?</h1>
+                    <h1 class="font-bold text-4xl py-2">Are you a Creator or a Maker?</h1>
+                    <p class="text-gray-700 mt-4 leading-8	">Our 3D print and fabrication marketplace is a platform for creators and makers to connect with a global network of 3D printing and fabrication engineers to help you finish that project. </p>
+                    <p class="text-gray-700 mt-4 leading-8">Find out how FabPad will work for you as Creator or Maker below.</p>
+                    <div class="flex space-x-16 mt-8">
+                        <button class="gradient-hover-effect rounded-3xl text-xl font-bold">Fabricator</button>
+                        <button class="gradient-hover-effect rounded-3xl text-xl font-bold">Creator</button>
+                        
+                    </div>
                 </div>
-                <div class="flex self-center justify-center space-x-10 m-0 max-w-lg">
-                    <button class="h-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center text-3xl dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Creator</button>
-                    <button class="h-36 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center text-3xl dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Maker</button>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <div class="flex flex-col ml-40 space-y-10">
-                    <h2 class="font-bold text-xl py-2">Creator</h2>
-                    <p>1.</p>
-                    <p>Design your part using CAD</p>
-                    <p>Determine the purpose and specifications of the part. Before you start designing, it's important to understand what the part is for and what its specific requirements are. This might include dimensions, materials, strength requirements, and any other functional or aesthetic considerations.</p>
-                    <p>Choose a CAD software. There are many different CAD programs available, ranging from simple 2D drafting tools to more advanced 3D modeling software. Choose a program that meets your needs and that you feel comfortable using.</p>
-                    <p>Save and export the file. When you're happy with your design, save the file in a format that can be used by your 3D printer or other manufacturing equipment. Common file formats for 3D printing include STL and OBJ, but you may need to use a different format depending on your specific needs.</p>
-                </div>
-                <div class="flex justify-end">
-                    <img src="/imgs/midjourney-engineer-pc.png" class="h-full max-w-3xl object-cover rounded-l-3xl shadow-xl">
+                <div>
+                    <img class="h-full max-w-xl object-cover rounded-3xl ml-40" src="/imgs/midjourney-3d-print-parts.png">
                 </div>
             </div>
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col my-20 justify-center items-center">
+                    <h2 class="font-bold text-4xl mb-20">CREATOR</h2>
+                    <h3 class="font-semibold text-xl max-w-lg mb-20 ">You are the inventor as a creator, designing engineered components that other people can utilise for their own ideas.</h3>
+                    <h4 class="text-l max-w-lg">The actions listed below will help to ensure that your product is FabPad verified and is simple to replicate.</h4>
+                </div>
+            <div class="flex flex-col space-y-20">
+                <!-- Creator part 1 -->
+                <div class="flex flex-row-reverse justify-center items-center tealGradBg rounded-3xl">
+                    <div class="flex flex-col ml-40 mr-40 space-y-10">
+                        <div class="flex space-x-10 items-center">
+                            <span class="flex justify-center items-center bg-white rounded-full w-24 h-24 pb-2">
+                                <p class="font-bold text-6xl text-fabTeal">1</p>
+                            </span>
+                            <h3 class="font-semibold text-3xl text-white">Design your part using CAD</h3>
+                        </div>
+                        <ul class="max-w-2xl space-y-10 list-disc text-gray-700">
+                            <li>Determine the purpose and specifications of the part. Before you start designing, it's important to understand what the part is for and what its specific requirements are. This might include dimensions, materials, strength requirements, and any other functional or aesthetic considerations.</li>
+                            <li>Choose a CAD software. There are many different CAD programs available, ranging from simple 2D drafting tools to more advanced 3D modeling software. Choose a program that meets your needs and that you feel comfortable using.</li>
+                            <li>Save and export the file. When you're happy with your design, save the file in a format that can be used by your 3D printer or other manufacturing equipment. Common file formats for 3D printing include STL and OBJ, but you may need to use a different format depending on your specific needs.</li>
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <img src="/imgs/midjourney-engineer-pc.png" class="h-full max-w-xl object-cover rounded-l-3xl ">
+                    </div>
+                </div>
+                <!-- Creator part 2 -->
+                <div class="flex justify-center items-center">
+                    <div class="flex flex-col ml-40 mr-40 space-y-10">
+                        <div class="flex space-x-10 items-center">
+                            <span class="flex justify-center items-center bg-fabOrange rounded-full w-24 h-24 pb-2">
+                                <p class="font-bold text-6xl text-white ">2</p>
+                            </span>
+                            <h3 class="font-semibold text-3xl text-fabOrange">Verify design work</h3>
+                        </div>
+                        <ul class="max-w-2xl space-y-10 list-disc text-gray-700">
+                            <li>Check for accuracy: One of the most important aspects of checking a CAD design is ensuring that it is accurate. This includes checking the dimensions and measurements of the design to make sure they are correct and that all parts fit together as intended. You should also check that the design is properly aligned and that all lines and curves are smooth and continuous.</li>
+                            <li>Check for functionality: In addition to accuracy, it's important to make sure that the design functions as intended. This may involve testing the design using simulation software or by physically prototyping the design to see how it performs.</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-end">
+                        <img src="/imgs/midjourney-3d-measure.png" class="h-full max-w-xl object-cover rounded-3xl shadow-xl">
+                    </div>
+                </div>
+                <!-- Creator Part 3 -->
+                <div class="flex flex-row-reverse justify-center items-center purpleGradBg rounded-3xl">
+                    <div class="flex flex-col ml-40 mr-40 space-y-10">
+                        <div class="flex space-x-10 items-center">
+                            <span class="flex justify-center items-center bg-white rounded-full w-24 h-24 pb-2">
+                                <p class="font-bold text-6xl text-fabPurple ">3</p>
+                            </span>
+                            <h3 class="font-semibold text-white text-3xl">What tools and technology is required?</h3>
+                        </div>
+                        <ul class="max-w-2xl space-y-10 list-disc text-gray-700">
+                            <li>Check for accuracy: One of the most important aspects of checking a CAD design is ensuring that it is accurate. This includes checking the dimensions and measurements of the design to make sure they are correct and that all parts fit together as intended. You should also check that the design is properly aligned and that all lines and curves are smooth and continuous.</li>
+                            <li>Check for functionality: In addition to accuracy, it's important to make sure that the design functions as intended. This may involve testing the design using simulation software or by physically prototyping the design to see how it performs.</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="flex justify-end">
+                        <img src="/imgs/midjourney-tools.png" class="h-full max-w-xl object-cover rounded-l-3xl">
+                    </div>
+                </div>
+                <!-- Creator Part 4 -->
+                <div class="flex justify-center items-center">
+                    <div class="flex flex-col ml-40 mr-40 space-y-10">
+                        <div class="flex space-x-10 items-center">
+                            <span class="flex justify-center items-center bg-fabOrange rounded-full w-24 h-24 pb-2">
+                                <p class="font-bold text-6xl text-white ">4</p>
+                            </span>
+                            <h3 class="font-semibold text-3xl text-fabOrange">Upload onto FabPad</h3>
+                        </div>
+                        <ul class="max-w-2xl space-y-10 list-disc">
+                            <li>Check for accuracy: One of the most important aspects of checking a CAD design is ensuring that it is accurate. This includes checking the dimensions and measurements of the design to make sure they are correct and that all parts fit together as intended. You should also check that the design is properly aligned and that all lines and curves are smooth and continuous.</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-end">
+                        <img src="/imgs/midjourney-woman-upload.png" class="h-full max-w-xl object-cover rounded-3xl shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+            
                 
             
         </section>
@@ -40,3 +118,4 @@
 </footer>
 
 </html>
+

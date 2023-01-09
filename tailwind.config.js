@@ -12,10 +12,23 @@ module.exports = {
         fabDarkBlue: '#023047',
         fabYellow: '#FFB703',
         fabOrange: '#FB8500',
+        fabTeal: '#8ed1bd',
+        fabPurple: '#C1BDC8'
+      },
+      backgroundImage: {
+        'newsletter-bg': "url('/imgs/newsletter-gears.png')",
+      },
+      height: {
+        'landing-height': "300px"
       }
-    },
+    },  
   },
   plugins: [],
+  safelist: [
+    'hidden',
+    'pointer-events-none',
+    'pointer-events-auto',
+  ],
 }
 
 

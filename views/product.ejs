@@ -1,7 +1,12 @@
 <script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
-<%- include('partials/header') -%>
 
-<main>
+<body class="flex flex-col min-h-screen">
+
+<header>
+  <%- include('partials/header') -%>
+</header>
+
+<main class="flex flex-col grow justify-center">
   <section class="flex flex-col justify-center items-center my-20 space-y-24">
     <div class="flex justify-center items-center space-x-28 max-w-4xl">
       <div>
@@ -53,8 +58,11 @@
   </section>
 </main>
 
-<%- include('partials/footer') -%>
+<footer>
+  <%- include('partials/footer') -%>
+</footer>
 
+</body>
 
       <!-- <form
           action="/product/likeProduct/<%= product.id %>?_method=PUT"

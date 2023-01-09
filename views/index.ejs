@@ -1,13 +1,106 @@
-<%- include('partials/header') -%>
-<body>
-    <section class="flex justify-center mx-auto">
-        <div class="">
-            <img src="https://img.freepik.com/free-vector/3d-isometric-ultraviolet-laptop-printer_1441-2150.jpg?w=1480&t=st=1669054702~exp=1669055302~hmac=1ad2a80eddc062bc4d8f034533ce555a343100a26f064415781abc59604f2095">
-        </div>
-    </section> 
+<script src="https://ar-3d-viewer.cloudinary.com/main.js"></script>
+
+<body class="flex flex-col min-h-screen">
+    <header>
+        <%- include('partials/header') -%>
+    </header>
+
+    <main class="flex grow flex-col">
+        <section id="welcome" class="flex justify-center mx-auto mt-20 h-3/6">
+            <div class="flex flex-col justify-center mt-32 relative left-40 h-3/6 px-16 top-30 bg-fabDarkBlue shadow-lg rounded-3xl">
+                <h1 class="font-bold text-white text-6xl py-2	w-full">Welcome to FabPad</h1>
+                <h3 class="text-white mt-4 text-2xl leading-8 ">FabPad is the go to 3D print and fabrication <br> marketplace for creators and engineers to find <br> hard to find parts.</h3>
+            </div>
+            <div class="flex">
+              <img src="/imgs/landing-page-simple.png" class="max-w-4xl ml-20 ">
+            </div>
+            <!-- <div>
+                <img src="/imgs/midjourney-garage.png" class="h-full max-w-xl object-cover rounded-3xl ml-40">
+            </div> -->
+        </section> 
+
+        <section class="flex flex-col items-center justify-center my-20">
+            <div class="my-20">
+                <h2 class="font-bold text-3xl">Trending</h2>
+            </div>
+            <div class="grid grid-cols-3 gap-4 max-w-6xl">
+                <% for(let i=0; i < 3; i++) { %>     
+                    <div class="slowHover flex flex-col	shadow-lg	hover:shadow-fabDarkBlue p-4 w-full max-h-96 justify-between">
+                      <div class="w-full">
+                      <% if (products[i].file.slice(-3) === "glb") { %>
+                        <div class="h-48">
+                          <ar-3d-viewer cloud="dx7g39ojq" ar="false" models="<%= products[i].file.slice(50)%>">
+                            <button slot="zoom-in" class="hidden"></button>
+                            <button slot="zoom-out" class="hidden"></button>
+                          </ar-3d-viewer>
+                        </div>
+                      <% } else { %>
+                        <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
+                      <% } %>
+                      </div>
+                        <a class="productLink" href="/product/<%= products[i]._id%>">
+                          <div class="mt-2">  
+                            <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-fabBrightBlue text-white overflow-hidden whitespace-nowrap text-ellipsis "><%= products[i].title%></h1>
+                            <p class="p-2 text-gray-700 text-xs	overflow-hidden	whitespace-nowrap	text-ellipsis"><%= products[i].description%></p>
+                          </div>
+                        </a>
+                        <div class="likeDownload hidden flex justify-between mx-2">
+                          <form action="/product/likeProduct/<%= products[i]._id %>?_method=PUT" method="POST">
+                            <button type="submit">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart hover:fill-fabOrange hover:stroke-fabOrange " width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2183BC" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+                              </svg>
+                            </button>
+                          </form>
+                          <a href="https://res.cloudinary.com/dx7g39ojq/image/upload/fl_attachment/v1671197285/<%= products[i].cloudinaryId%>" class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download hover:stroke-fabOrange" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6b7280" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                              <polyline points="7 11 12 16 17 11" />
+                              <line x1="12" y1="4" x2="12" y2="16" />
+                            </svg>
+                          </a>
+                          
+                      </div>
+                    </div>
+                <% } %>
+              </div>
+        </section>
+
+        <section class="flex flex-col items-center justify-center my-20">
+            <div class="mb-10">
+                <h2 class="font-bold text-3xl mb-10">Why Use FabPad?</h2>
+            </div>
+            <div class="flex flex-col space-y-16 justify-center">
+                <div class="tealGradBg px-12 py-8 space-y-5 rounded-3xl shadow-xl relative right-36">
+                    <p class="text-gray-700 font-semibold">Fred Tet, The Electric Garage</p>
+                    <p class="max-w-lg text-gray-700">I own a car restoration business, and we frequently stumble upon difficult-to-find parts that must be reproduced. By following the instructions of people who have already encountered this issue and been able to duplicate the part, FabPad has helped us save time.</p>
+                </div>
+                <div class="purpleGradBg px-12 py-8 space-y-5 rounded-3xl shadow-xl relative left-36">
+                  <p class="text-gray-700 font-semibold">Jenny Prince, Engineer</p>
+                  <p class="max-w-lg text-gray-700">For my 1980 Ford Escort, I create a lot of bespoke parts. If I have a part made, I upload it to the FabPad marketplace so that other people can download and build it to help the community out.</p>
+                </div>
+                <div class="blueGradBg px-12 py-8 space-y-5 rounded-3xl shadow-xl relative right-36">
+                  <p class="text-gray-700 font-semibold">Paul Cosworth, 3D Print Consultant</p>
+                  <p class="max-w-lg text-gray-700">I've been in the 3D printing business for 15 years now and it's great to find a marketplace to cater for automotive and general engineering, with an emphasis on the helping the community. </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex justify-center items-center my-20">
+            <div class="flex justify-center items-center space-x-80 w-3/4 h-48 bg-no-repeat	bg-left	 bg-newsletter-bg bg-auto rounded-3xl shadow-xl">
+                <p class="text-6xl font-bold text-fabOrange bg-white px-5 py-4 whitespace-nowrap">Join the Newsletter</p>
+              <div class="flex items-center space-x-4">
+                  <input type="text" placeholder="Email address" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-72 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <button type="submit" class="text-fabBrightBlue bg-white hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg sm:w-auto px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join</button>
+              </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('partials/footer') -%>
+    </footer>
 </body>
-
-
-<%- include('partials/footer') -%>
-
 
