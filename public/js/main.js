@@ -26,9 +26,13 @@ if (document.location.href.includes('/library')) {
 
 // if user is not logged in prevent liking and downloading and accessing product
 function blockOnClick() {
-  if (!user) {
-    document.querySelectorAll('.likeDownload').classList.toggle("hidden")
-    document.querySelectorAll('.productLink').classList.toggle("pointer-events-none")
+  if (user) {
+    console.log(typeof user)
+    let blockedProducts = document.querySelectorAll('.productLink')
+    
+    for (i = 0; i < blockedProducts.length; i++) {
+      blockedProducts[i].classList.remove("pointer-events-none");
+  }
   }
 }
 
