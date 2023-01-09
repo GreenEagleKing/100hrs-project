@@ -18,6 +18,7 @@ router.get("/login", authController.getLogin);
 router.get("/logout", authController.logout);
 router.get("/contact", contactController.getContact);
 router.get("/howItWorks", howItWorksController.getHowItWorks);
+router.post("/newsletter", homeController.addNewsletter);
 
 
 module.exports = router;

@@ -92,8 +92,20 @@
             <div class="flex justify-center items-center space-x-80 w-3/4 h-48 bg-no-repeat	bg-left	 bg-newsletter-bg bg-auto rounded-3xl shadow-xl">
                 <p class="text-6xl font-bold text-fabOrange bg-white px-5 py-4 whitespace-nowrap">Join the Newsletter</p>
               <div class="flex items-center space-x-4">
-                  <input type="text" placeholder="Email address" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-72 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <form action="/newsletter" method="POST" >
+                  <% if (locals.messages.errors) { %> 
+                    <% messages.errors.forEach( el => { %>
+                      <div class="alert alert-danger mb-4 text-red-500"><%= el.msg %></div>
+                    <% }) %>
+                  <% } %> 
+                  <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                      <div><%= el.msg %></div>
+                    <% }) %> 
+                  <% } %>              
+                  <input type="email" placeholder="Email address" name="email" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-72 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <button type="submit" class="text-fabBrightBlue bg-white hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg sm:w-auto px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join</button>
+                </form>
               </div>
             </div>
         </section>
