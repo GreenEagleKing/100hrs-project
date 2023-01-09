@@ -6,14 +6,17 @@
     </header>
 
     <main class="flex grow flex-col">
-        <section id="welcome" class="flex justify-center mx-auto mt-20">
-            <div class="flex flex-col mt-20">
-                <h1 class="font-bold text-4xl py-2">Welcome to FabPad</h1>
-                <h3 class="text-gray-700 mt-4 leading-8">FabPad is the go to 3D print and fabrication marketplace <br> for creators and engineers to find hard to find parts.</h3>
+        <section id="welcome" class="flex justify-center mx-auto mt-20 h-3/6">
+            <div class="flex flex-col justify-center mt-32 relative left-40 h-3/6 px-16 top-30 bg-fabDarkBlue shadow-lg rounded-3xl">
+                <h1 class="font-bold text-white text-6xl py-2	w-full">Welcome to FabPad</h1>
+                <h3 class="text-white mt-4 text-2xl leading-8 ">FabPad is the go to 3D print and fabrication <br> marketplace for creators and engineers to find <br> hard to find parts.</h3>
             </div>
-            <div>
+            <div class="flex">
+              <img src="/imgs/landing-page-simple.png" class="max-w-4xl ml-20 ">
+            </div>
+            <!-- <div>
                 <img src="/imgs/midjourney-garage.png" class="h-full max-w-xl object-cover rounded-3xl ml-40">
-            </div>
+            </div> -->
         </section> 
 
         <section class="flex flex-col items-center justify-center my-20">
@@ -86,15 +89,13 @@
         </section>
 
         <section class="flex justify-center items-center my-20">
-            <div class="flex justify-center items-center space-x-80 w-full px-20 py-20 bg-fabBrightBlue">
-                <p class="">Join the Newsletter</p>
-              <div class="flex items-center">
-                  <label for="email" class="mr-8">Email Address</label>
-                  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-72 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <div class="flex justify-center items-center space-x-80 w-3/4 h-48 bg-no-repeat	bg-left	 bg-newsletter-bg bg-auto rounded-3xl shadow-xl">
+                <p class="text-6xl font-bold text-fabOrange bg-white px-5 py-4 whitespace-nowrap">Join the Newsletter</p>
+              <div class="flex items-center space-x-4">
+                  <input type="text" placeholder="Email address" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-72 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <button type="submit" class="text-fabBrightBlue bg-white hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg sm:w-auto px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join</button>
               </div>
             </div>
-            
-
         </section>
     </main>
 
