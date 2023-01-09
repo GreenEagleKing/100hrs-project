@@ -15,6 +15,11 @@
   </header>
 
   <main class="flex flex-col grow items-center justify-center">
+    <% if(!user) { %>
+      <div>
+        <p class="text-red-500 bg-red-200 px-6 py-2 rounded-full">Please Login or Signup to view product details</p>
+      </div>
+    <% } %>
     <section class="flex w-3/4 justify-center m-auto my-20">
       <div class="grid grid-cols-4 gap-4">
       <% for(let i=0; i < products.length; i++) { %>     
@@ -31,13 +36,13 @@
               <img class="aspect-square	object-cover flex m-auto max-h-48" src="<%= products[i].file%>">
             <% } %>
             </div>
-              <a href="/product/<%= products[i]._id%>">
+              <a class="productLink pointer-events-none " href="/product/<%= products[i]._id%>">
                 <div class="mt-2">  
                   <h1 class="text-lg font-bold p-2 pl-4 rounded-sm bg-fabBrightBlue text-white overflow-hidden whitespace-nowrap text-ellipsis "><%= products[i].title%></h1>
                   <p class="p-2 text-gray-700 text-xs	overflow-hidden	whitespace-nowrap	text-ellipsis"><%= products[i].description%></p>
                 </div>
               </a>
-              <div class="like flex justify-between mx-2">
+              <div class="likeDownload hidden flex justify-between mx-2">
                 <form action="/product/likeProduct/<%= products[i]._id %>?_method=PUT" method="POST">
                   <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart hover:fill-fabOrange hover:stroke-fabOrange " width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2183BC" fill="none" stroke-linecap="round" stroke-linejoin="round">
