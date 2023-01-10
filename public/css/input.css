@@ -39,3 +39,11 @@
 .blueGradBg {
     background: linear-gradient(90deg, rgb(122, 185, 221) 50%, rgb(96, 200, 248) 100%);
 }
+
+#join-btn { 
+    background-color: #FB8500;
+}
+
+#join-btn:hover{
+    background-color: rgb(55 65 81)
+}
