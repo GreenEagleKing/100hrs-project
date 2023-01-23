@@ -2,6 +2,7 @@
 hideDropdown()
 toggleNavBlue()
 
+// Nav bar items change to blue if you are on that page
 function toggleNavBlue() {
   let currentUrl = document.location
   document.querySelectorAll('.navMenu').forEach(function(e){
@@ -11,6 +12,7 @@ function toggleNavBlue() {
   })
 }
 
+// Dropdown menu is only shown when user is logged in
 function hideDropdown() {
   if (!user) {
     let dropdown = document.getElementById('dropdownMenu')
@@ -49,7 +51,7 @@ function showAddProduct() {
     document.getElementById('addProduct').classList.toggle('hidden')
 }
 
-
+// When user uploads a new product a preview image is displayed (IMG only currently)
 function showImgPreview(event){
     if(event.target.files.length > 0){
       const src = URL.createObjectURL(event.target.files[0]);
@@ -59,6 +61,7 @@ function showImgPreview(event){
     }
 }
 
+// User can copy any of the contact info onto their clipboard
 async function copyToClipboard(text) {
   try {
     await navigator.clipboard.writeText(text);

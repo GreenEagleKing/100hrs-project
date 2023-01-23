@@ -18,7 +18,11 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-connectDB();
+connectDB().then (() => {
+  app.listen(process.env.PORT, () => {
+    console.log("Server is running, you better catch it!");
+  });
+});
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -60,6 +64,10 @@ app.use("/", mainRoutes);
 app.use("/product", productRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
-});
+
+
+
+// Commenting original code as Cyclic requires listen to be called after connectDB()
+// app.listen(process.env.PORT, () => {
+//  console.log("Server is running, you better catch it!");
+//});
