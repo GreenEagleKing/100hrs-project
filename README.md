@@ -2,7 +2,9 @@
 
 FabPad is the go to 3D print and fabrication marketplace for creators and engineers to find hard to find parts. I wanted to create a place for users to share bespoke parts they have engineered and created. Through uploading 3D models and instructional plans, other users could download and build them.
 
-It is currently at a MVP level with the core functionality built into it. It is not been optimised for a responsive layout for mobile yet.
+It is currently at a MVP level with the core functionality built into it. 
+
+**It is not been optimised for a responsive layout for mobile yet.
 
 ![image](https://raw.githubusercontent.com/GreenEagleKing/100hrs-project/8e3cb02ae1d584876672c76f5b71c9beab22aaec/public/imgs/forGithub/fabpad-gif.gif)
 
