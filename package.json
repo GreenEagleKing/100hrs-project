@@ -25,6 +25,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "build": "npm install && npm run build",
     "watch": "tailwind -i public/css/input.css -o public/css/dist/output.css --watch",
     "devCon": "concurrently \"nodemon server.js\" \"npx tailwindcss -i public/css/input.css -o public/css/dist/output.css --watch\" "
   },
